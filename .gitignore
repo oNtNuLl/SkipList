@@ -1,0 +1,20 @@
+# 编译生成目录与二进制产物
+cmake-build-*/
+build/
+bin/
+*.o
+*.a
+*.so
+src/main
+skipkv_server
+
+# IDE 配置与本地缓存
+.idea/
+.vscode/
+*.swp
+*~
+
+# 日志与持久化临时文件
+*.log
+*.wal
+data/

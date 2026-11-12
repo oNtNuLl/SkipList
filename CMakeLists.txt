@@ -16,4 +16,12 @@ add_executable(skipkv_server
         src/main.cpp
         src/SkipList.cpp
         include/SkipList.h
+        include/WALBuffer.cpp
+        include/WALBuffer.h
+        include/WALIO.cpp
+        include/WALIO.h
+        include/WALManage.cpp
+        include/WALManage.h
 )
+
+target_link_libraries(skipkv_server pthread)

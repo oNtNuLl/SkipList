@@ -51,6 +51,7 @@ public:
 
     int insert(K key, V value)
     {
+
         Node<K,V> * update[_max_level + 1];
         memset(update, 0, sizeof(Node<K,V>*) * (_max_level + 1));
         Node<K,V> * current = _header;
@@ -191,8 +192,7 @@ public:
 
             while (base_node != nullptr) {
 
-
-                std::string node_str = std::to_string(base_node->key) + ":" + std::to_string(base_node->value);
+                std::string node_str = base_node->key+ ":" + base_node->value;
                 if (current != nullptr && current->key == base_node->key) {
                     std::cout << node_str;
                     current = current->forward[i];

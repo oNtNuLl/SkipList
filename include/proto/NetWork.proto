@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package network;
+
+enum OpType{
+  GET = 0;
+  SET = 1;
+  DEL = 2;
+}
+
+message execute{
+  OpType op_type = 1;
+  string key = 2;
+  string value = 3;
+}
+
+message result{
+  bool success = 1;
+  string value = 2;
+  string error_msg  = 3;
+}

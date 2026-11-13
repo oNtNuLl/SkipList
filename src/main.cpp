@@ -8,21 +8,24 @@
 
 #include "../include/SkipList.h"
 #include "../include/WALManage.h"
+#include "server/server.h"
 
 
 int main()
 {
-    srand(static_cast<unsigned>(time(nullptr)));
-
-    SkipList<string, string> my_db(12);
-    WALManage wal_manage;
-
-    wal_manage.reload(my_db);
-    // wal_manage.append("name3", "1");
-    // my_db.insert("name3", "1");
-    // wal_manage.append("city3", "2");
-    // my_db.insert("city3", "2");
-    my_db.display_list();
+    server s(8888);
+    s.start();
+    // srand(static_cast<unsigned>(time(nullptr)));
+    //
+    // SkipList<string, string> my_db(12);
+    // WALManage wal_manage;
+    //
+    // wal_manage.reload(my_db);
+    // // wal_manage.append("name3", "1");
+    // // my_db.insert("name3", "1");
+    // // wal_manage.append("city3", "2");
+    // // my_db.insert("city3", "2");
+    // my_db.display_list();
 
     // std::random_device rd;
     // std::mt19937 gen(rd());

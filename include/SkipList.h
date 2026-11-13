@@ -96,7 +96,7 @@ public:
         return 0;
     }
 
-    bool search(K key)
+    bool search(K key,V& value)
     {
 
         Node<K,V> * current = _header;
@@ -108,13 +108,13 @@ public:
                 current = current->forward[i];
             }
 
-
         }
 
         current = current->forward[0];
 
         if (current != nullptr && current->key == key)
         {
+            value = current->value;
              std::cout << " 找到了！Key: " << key << " 对应的值是: " << current->value << std::endl;
             return true;
         }
